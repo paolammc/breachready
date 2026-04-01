@@ -2,12 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type {
   BreachReadyState,
-  FlashcardProgress,
-  PBQProgress,
-  ConsoleProgress,
-  GlossaryProgress,
   XPLevel,
-  XP_LEVELS,
 } from '../types';
 import { XP_AWARDS } from '../types';
 
