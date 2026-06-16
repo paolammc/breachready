@@ -178,19 +178,19 @@ export function Flashcards() {
       <div className="flex items-center justify-between">
         <button
           onClick={handleBackToSelect}
-          className="flex items-center gap-2 text-slate-gray hover:text-pale-gray transition-colors font-ui"
+          className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors font-body"
         >
           <ArrowLeft size={20} />
           <span>Back</span>
         </button>
 
         <div className="flex items-center gap-4">
-          <span className="text-slate-gray font-ui text-sm">
+          <span className="text-foreground-muted font-body text-sm">
             {currentIndex + 1} / {shuffledCards.length}
           </span>
           <button
             onClick={handleRestart}
-            className="p-2 text-slate-gray hover:text-pale-gray hover:bg-pale-gray/10 rounded-lg transition-colors"
+            className="p-2 text-foreground-muted hover:text-foreground hover:bg-surface-muted rounded-lg transition-colors"
             title="Shuffle & restart"
           >
             <Shuffle size={18} />
@@ -199,16 +199,16 @@ export function Flashcards() {
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 bg-slate-gray/20 rounded-full overflow-hidden">
+      <div className="h-2 bg-foreground-muted/20 rounded-full overflow-hidden">
         <div
-          className="h-full bg-amber-gold transition-all duration-300"
+          className="h-full bg-brand-warning transition-all duration-300"
           style={{ width: `${((currentIndex + 1) / shuffledCards.length) * 100}%` }}
         />
       </div>
 
       {/* Deck title */}
       <div className="text-center">
-        <h2 className="font-display text-xl font-bold text-pale-gray">
+        <h2 className="font-heading text-xl font-bold text-foreground">
           {selectedDeck === 'commands' ? 'Console Commands' : 'Port Numbers'}
         </h2>
       </div>

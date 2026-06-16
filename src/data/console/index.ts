@@ -1,0 +1,1 @@
+export { consoleExercises } from './exercises';

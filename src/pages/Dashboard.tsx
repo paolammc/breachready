@@ -45,7 +45,7 @@ export function Dashboard() {
 
       {/* Progress Rings */}
       <section>
-        <h2 className="font-display text-xl font-bold text-pale-gray mb-4">
+        <h2 className="font-heading text-xl font-bold text-foreground mb-4">
           Your Progress
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -74,7 +74,7 @@ export function Dashboard() {
 
       {/* Quick Launch Cards */}
       <section>
-        <h2 className="font-display text-xl font-bold text-pale-gray mb-4">
+        <h2 className="font-heading text-xl font-bold text-foreground mb-4">
           Quick Launch
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -92,7 +92,7 @@ export function Dashboard() {
             title="Console Simulator"
             description="Practice typing commands"
             lastScore={Math.round(consoleExercisesProgress)}
-            accentColor="crimson"
+            accentColor="blue"
           />
           <QuickLaunchCard
             to="/pbq"

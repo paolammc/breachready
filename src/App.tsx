@@ -5,12 +5,10 @@ import { Dashboard, Flashcards, Console, PBQLab, Glossary, Progress } from './pa
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen bg-deep-navy">
-        {/* Desktop Sidebar */}
+      <div className="flex min-h-screen tech-bg">
         <Sidebar />
 
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           <TopBar />
 
           <main className="flex-1 p-4 lg:p-8 pb-20 lg:pb-8 overflow-y-auto">
@@ -25,7 +23,6 @@ function App() {
           </main>
         </div>
 
-        {/* Mobile Bottom Navigation */}
         <BottomNav />
       </div>
     </Router>

@@ -7,25 +7,25 @@ interface XPBadgeProps {
 }
 
 const getXPLevel = (xp: number): { level: XPLevel; color: string; bgColor: string } => {
-  if (xp >= 15000) return { level: 'BreachReady', color: 'text-crimson', bgColor: 'bg-crimson/20' };
-  if (xp >= 8000) return { level: 'Vanguard', color: 'text-amber-gold', bgColor: 'bg-amber-gold/20' };
-  if (xp >= 4000) return { level: 'Sentinel', color: 'text-purple-400', bgColor: 'bg-purple-400/20' };
-  if (xp >= 1500) return { level: 'Defender', color: 'text-forest-green', bgColor: 'bg-forest-green/20' };
-  if (xp >= 500) return { level: 'Analyst', color: 'text-blue-400', bgColor: 'bg-blue-400/20' };
-  return { level: 'Cadet', color: 'text-slate-gray', bgColor: 'bg-slate-gray/20' };
+  if (xp >= 15000) return { level: 'BreachReady', color: 'text-brand-accent', bgColor: 'bg-brand-accent/15' };
+  if (xp >= 8000) return { level: 'Vanguard', color: 'text-brand-warning', bgColor: 'bg-brand-warning/15' };
+  if (xp >= 4000) return { level: 'Sentinel', color: 'text-purple-400', bgColor: 'bg-purple-400/15' };
+  if (xp >= 1500) return { level: 'Defender', color: 'text-brand-secondary', bgColor: 'bg-brand-secondary/15' };
+  if (xp >= 500) return { level: 'Analyst', color: 'text-brand-accent', bgColor: 'bg-brand-accent/15' };
+  return { level: 'Cadet', color: 'text-foreground-muted', bgColor: 'bg-surface-muted' };
 };
 
 export function XPBadge({ xp, showLevel = false }: XPBadgeProps) {
   const { level, color, bgColor } = getXPLevel(xp);
 
   return (
-    <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${bgColor}`}>
+    <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full border border-border ${bgColor}`}>
       <Zap size={16} className={color} fill="currentColor" />
-      <span className={`font-ui font-semibold text-sm ${color}`}>
+      <span className={`font-body font-semibold text-sm ${color}`}>
         {xp.toLocaleString()} XP
       </span>
       {showLevel && (
-        <span className={`text-xs font-ui ${color} opacity-80`}>
+        <span className={`text-xs font-body ${color} opacity-80`}>
           ({level})
         </span>
       )}

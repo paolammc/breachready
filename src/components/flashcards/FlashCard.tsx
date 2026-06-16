@@ -51,44 +51,44 @@ export function FlashCard({
         >
           {/* Front */}
           <div
-            className="absolute w-full h-full rounded-2xl bg-pale-gray p-6 flex flex-col"
+            className="absolute w-full h-full rounded-2xl bg-surface-elevated p-6 flex flex-col"
             style={{ backfaceVisibility: 'hidden' }}
           >
             {/* Category badge */}
             <div className="flex items-center justify-between mb-4">
-              <span className="px-3 py-1 bg-deep-navy/10 text-deep-navy rounded-full text-xs font-ui font-medium">
+              <span className="px-3 py-1 bg-surface/10 text-brand-primary rounded-full text-xs font-body font-medium">
                 {category}
               </span>
               {isMastered && (
-                <Star size={20} className="text-amber-gold" fill="currentColor" />
+                <Star size={20} className="text-brand-warning" fill="currentColor" />
               )}
             </div>
 
             {/* Front content */}
             <div className="flex-1 flex items-center justify-center">
-              <p className={`text-deep-navy text-center ${isPort ? 'font-mono text-5xl font-bold' : 'font-mono text-2xl'}`}>
+              <p className={`text-brand-primary text-center ${isPort ? 'font-mono text-5xl font-bold' : 'font-mono text-2xl'}`}>
                 {front}
               </p>
             </div>
 
             {/* Hint */}
-            <p className="text-slate-gray text-sm text-center font-body">
+            <p className="text-foreground-muted text-sm text-center font-body">
               {isPort ? 'What protocol uses this port?' : 'What does this command do?'}
             </p>
           </div>
 
           {/* Back */}
           <div
-            className="absolute w-full h-full rounded-2xl bg-forest-green p-6 flex flex-col"
+            className="absolute w-full h-full rounded-2xl bg-brand-accent p-6 flex flex-col"
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
           >
             {/* Category badge */}
             <div className="flex items-center justify-between mb-4">
-              <span className="px-3 py-1 bg-white/20 text-white rounded-full text-xs font-ui font-medium">
+              <span className="px-3 py-1 bg-white/20 text-white rounded-full text-xs font-body font-medium">
                 {category}
               </span>
               {isMastered && (
-                <Star size={20} className="text-amber-gold" fill="currentColor" />
+                <Star size={20} className="text-brand-warning" fill="currentColor" />
               )}
             </div>
 
@@ -101,9 +101,9 @@ export function FlashCard({
 
             {/* Exam tip */}
             {examTip && (
-              <div className="flex items-start gap-2 bg-amber-gold/20 rounded-lg p-3 mt-4">
-                <Lightbulb size={16} className="text-amber-gold flex-shrink-0 mt-0.5" />
-                <p className="text-amber-gold text-sm font-body italic">
+              <div className="flex items-start gap-2 bg-brand-warning/20 rounded-lg p-3 mt-4">
+                <Lightbulb size={16} className="text-brand-warning flex-shrink-0 mt-0.5" />
+                <p className="text-brand-warning text-sm font-body italic">
                   {examTip}
                 </p>
               </div>
@@ -121,13 +121,13 @@ export function FlashCard({
         >
           <button
             onClick={() => handleResult(false)}
-            className="flex-1 max-w-[140px] py-3 bg-crimson text-white font-ui font-semibold rounded-lg hover:bg-crimson/90 transition-colors"
+            className="flex-1 max-w-[140px] py-3 bg-red-500 text-white font-body font-semibold rounded-lg hover:bg-red-500/90 transition-colors"
           >
             Miss
           </button>
           <button
             onClick={() => handleResult(true)}
-            className="flex-1 max-w-[140px] py-3 bg-forest-green text-white font-ui font-semibold rounded-lg hover:bg-forest-green/90 transition-colors"
+            className="flex-1 max-w-[140px] py-3 bg-brand-accent text-white font-body font-semibold rounded-lg hover:bg-brand-accent/90 transition-colors"
           >
             Got It
           </button>
@@ -136,7 +136,7 @@ export function FlashCard({
 
       {/* Tap hint */}
       {!isFlipped && (
-        <p className="text-slate-gray text-sm text-center mt-4 font-ui">
+        <p className="text-foreground-muted text-sm text-center mt-4 font-body">
           Tap card to flip
         </p>
       )}

@@ -13,28 +13,28 @@ interface QuickLaunchCardProps {
 
 const colorClasses = {
   amber: {
-    bg: 'bg-amber-gold/10',
-    border: 'border-amber-gold/30 hover:border-amber-gold/50',
-    icon: 'text-amber-gold',
-    badge: 'bg-amber-gold/20 text-amber-gold',
+    bg: 'bg-brand-warning/10',
+    border: 'border-brand-warning/30 hover:border-brand-warning/50',
+    icon: 'text-brand-warning',
+    badge: 'bg-brand-warning/20 text-brand-warning',
   },
   green: {
-    bg: 'bg-forest-green/10',
-    border: 'border-forest-green/30 hover:border-forest-green/50',
-    icon: 'text-forest-green',
-    badge: 'bg-forest-green/20 text-forest-green',
+    bg: 'bg-brand-accent/10',
+    border: 'border-brand-accent/30 hover:border-brand-accent/50',
+    icon: 'text-brand-accent',
+    badge: 'bg-brand-accent/20 text-brand-accent',
   },
   crimson: {
-    bg: 'bg-crimson/10',
-    border: 'border-crimson/30 hover:border-crimson/50',
-    icon: 'text-crimson',
-    badge: 'bg-crimson/20 text-crimson',
+    bg: 'bg-red-500/10',
+    border: 'border-red-500/30 hover:border-red-500/50',
+    icon: 'text-red-500',
+    badge: 'bg-red-500/20 text-red-500',
   },
   blue: {
-    bg: 'bg-blue-500/10',
-    border: 'border-blue-500/30 hover:border-blue-500/50',
-    icon: 'text-blue-400',
-    badge: 'bg-blue-500/20 text-blue-400',
+    bg: 'bg-brand-secondary/10',
+    border: 'border-brand-secondary/30 hover:border-brand-secondary/50',
+    icon: 'text-brand-secondary',
+    badge: 'bg-brand-secondary/20 text-brand-secondary',
   },
 };
 
@@ -51,23 +51,23 @@ export function QuickLaunchCard({
   return (
     <Link
       to={to}
-      className={`block p-6 rounded-xl border ${colors.border} ${colors.bg} transition-all hover:scale-[1.02]`}
+      className={`block p-6 rounded-xl border ${colors.border} ${colors.bg} shadow-tech transition-all hover:scale-[1.02] hover:shadow-tech-lg`}
     >
       <div className="flex items-start justify-between mb-4">
         <div className={`p-3 rounded-lg ${colors.bg}`}>
           <Icon size={24} className={colors.icon} />
         </div>
         {lastScore !== undefined && (
-          <span className={`px-2 py-1 rounded-full text-xs font-ui font-medium ${colors.badge}`}>
+          <span className={`px-2 py-1 rounded-full text-xs font-body font-medium ${colors.badge}`}>
             {lastScore}%
           </span>
         )}
       </div>
 
-      <h3 className="font-display text-lg font-bold text-pale-gray mb-1">{title}</h3>
-      <p className="font-body text-sm text-slate-gray mb-4">{description}</p>
+      <h3 className="font-heading text-lg font-bold text-foreground mb-1">{title}</h3>
+      <p className="font-body text-sm text-foreground-muted mb-4">{description}</p>
 
-      <div className="flex items-center gap-1 text-sm font-ui font-medium text-amber-gold">
+      <div className={`flex items-center gap-1 text-sm font-body font-medium ${colors.icon}`}>
         <span>Resume</span>
         <ChevronRight size={16} />
       </div>

@@ -8,16 +8,16 @@ interface WeakAreasProps {
 export function WeakAreas({ areas }: WeakAreasProps) {
   if (areas.length === 0) {
     return (
-      <div className="bg-forest-green/10 rounded-xl p-6 border border-forest-green/20">
+      <div className="bg-brand-accent/10 rounded-xl p-6 border border-brand-accent/20">
         <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 bg-forest-green/20 rounded-lg">
-            <AlertTriangle size={20} className="text-forest-green" />
+          <div className="p-2 bg-brand-accent/20 rounded-lg">
+            <AlertTriangle size={20} className="text-brand-accent" />
           </div>
-          <h3 className="font-display text-lg font-bold text-pale-gray">
+          <h3 className="font-heading text-lg font-bold text-foreground">
             No Weak Areas Yet
           </h3>
         </div>
-        <p className="text-slate-gray font-body text-sm">
+        <p className="text-foreground-muted font-body text-sm">
           Start practicing to identify areas that need more attention.
         </p>
       </div>
@@ -25,17 +25,17 @@ export function WeakAreas({ areas }: WeakAreasProps) {
   }
 
   return (
-    <div className="bg-crimson/10 rounded-xl p-6 border border-crimson/20">
+    <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/20">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-crimson/20 rounded-lg">
-            <AlertTriangle size={20} className="text-crimson" />
+          <div className="p-2 bg-red-500/20 rounded-lg">
+            <AlertTriangle size={20} className="text-red-500" />
           </div>
           <div>
-            <h3 className="font-display text-lg font-bold text-pale-gray">
+            <h3 className="font-heading text-lg font-bold text-foreground">
               Weak Areas
             </h3>
-            <p className="text-sm text-slate-gray font-body">
+            <p className="text-sm text-foreground-muted font-body">
               Focus on these to improve your score
             </p>
           </div>
@@ -46,19 +46,19 @@ export function WeakAreas({ areas }: WeakAreasProps) {
         {areas.map((area, index) => (
           <li
             key={index}
-            className="flex items-center gap-3 bg-deep-navy/50 rounded-lg px-4 py-3"
+            className="flex items-center gap-3 bg-surface-muted rounded-lg px-4 py-3"
           >
-            <span className="w-6 h-6 flex items-center justify-center bg-crimson/20 rounded-full text-crimson font-ui text-xs font-bold">
+            <span className="w-6 h-6 flex items-center justify-center bg-red-500/20 rounded-full text-red-500 font-body text-xs font-bold">
               {index + 1}
             </span>
-            <span className="text-pale-gray font-body text-sm">{area}</span>
+            <span className="text-foreground font-body text-sm">{area}</span>
           </li>
         ))}
       </ul>
 
       <Link
         to="/flashcards"
-        className="flex items-center justify-center gap-2 w-full py-3 bg-crimson text-white font-ui font-semibold rounded-lg hover:bg-crimson/90 transition-colors"
+        className="flex items-center justify-center gap-2 w-full py-3 bg-red-500 text-white font-body font-semibold rounded-lg hover:bg-red-500/90 transition-colors"
       >
         <span>Drill These Now</span>
         <ArrowRight size={18} />

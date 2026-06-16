@@ -1,43 +1,43 @@
 import { Trophy, Target, Zap, RotateCcw, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface SessionSummaryProps {
-  totalCards: number;
-  correctCount: number;
+interface ExerciseCompleteProps {
+  totalExercises: number;
+  completedCount: number;
+  perfectCount: number;
   xpEarned: number;
-  newMastered: number;
   onRestart: () => void;
 }
 
-export function SessionSummary({
-  totalCards,
-  correctCount,
+export function ExerciseComplete({
+  totalExercises,
+  completedCount,
+  perfectCount,
   xpEarned,
-  newMastered,
   onRestart,
-}: SessionSummaryProps) {
-  const percentage = Math.round((correctCount / totalCards) * 100);
-  const isPerfect = percentage === 100;
+}: ExerciseCompleteProps) {
+  const percentage = Math.round((completedCount / totalExercises) * 100);
+  const isPerfect = perfectCount === completedCount;
 
   return (
     <div className="max-w-md mx-auto text-center space-y-6">
-      {/* Trophy / Result Icon */}
+      {/* Trophy Icon */}
       <div className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center ${
-        isPerfect ? 'bg-brand-warning/20' : percentage >= 70 ? 'bg-brand-accent/20' : 'bg-red-500/20'
+        isPerfect ? 'bg-brand-warning/20' : 'bg-brand-accent/20'
       }`}>
         <Trophy
           size={40}
-          className={isPerfect ? 'text-brand-warning' : percentage >= 70 ? 'text-brand-accent' : 'text-red-500'}
+          className={isPerfect ? 'text-brand-warning' : 'text-brand-accent'}
         />
       </div>
 
       {/* Title */}
       <div>
         <h2 className="font-heading text-3xl font-bold text-foreground mb-2">
-          {isPerfect ? 'Perfect!' : percentage >= 70 ? 'Well Done!' : 'Keep Practicing!'}
+          {isPerfect ? 'Perfect Run!' : 'Session Complete!'}
         </h2>
         <p className="text-foreground-muted font-body">
-          Session complete
+          You've completed all exercises
         </p>
       </div>
 
@@ -48,7 +48,7 @@ export function SessionSummary({
           <p className="font-heading text-2xl font-bold text-foreground">
             {percentage}%
           </p>
-          <p className="text-foreground-muted text-sm font-body">Accuracy</p>
+          <p className="text-foreground-muted text-sm font-body">Completed</p>
         </div>
 
         <div className="bg-surface-muted/50 rounded-xl p-4 border border-border/20">
@@ -63,20 +63,16 @@ export function SessionSummary({
       {/* Details */}
       <div className="bg-surface-muted rounded-xl p-4 border border-border/20 text-left">
         <div className="flex justify-between items-center py-2 border-b border-border/20">
-          <span className="text-foreground-muted font-body">Cards reviewed</span>
-          <span className="text-foreground font-body font-semibold">{totalCards}</span>
+          <span className="text-foreground-muted font-body">Exercises completed</span>
+          <span className="text-foreground font-body font-semibold">{completedCount}</span>
         </div>
         <div className="flex justify-between items-center py-2 border-b border-border/20">
-          <span className="text-foreground-muted font-body">Correct answers</span>
-          <span className="text-brand-accent font-body font-semibold">{correctCount}</span>
-        </div>
-        <div className="flex justify-between items-center py-2 border-b border-border/20">
-          <span className="text-foreground-muted font-body">Missed</span>
-          <span className="text-red-500 font-body font-semibold">{totalCards - correctCount}</span>
+          <span className="text-foreground-muted font-body">Perfect (first try)</span>
+          <span className="text-brand-accent font-body font-semibold">{perfectCount}</span>
         </div>
         <div className="flex justify-between items-center py-2">
-          <span className="text-foreground-muted font-body">Newly mastered</span>
-          <span className="text-brand-warning font-body font-semibold">{newMastered}</span>
+          <span className="text-foreground-muted font-body">Needed hints</span>
+          <span className="text-brand-warning font-body font-semibold">{completedCount - perfectCount}</span>
         </div>
       </div>
 
@@ -84,7 +80,7 @@ export function SessionSummary({
       <div className="flex gap-4">
         <button
           onClick={onRestart}
-          className="flex-1 flex items-center justify-center gap-2 py-3 bg-brand-warning text-brand-primary font-body font-semibold rounded-lg hover:bg-brand-warning/90 transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 py-3 bg-red-500 text-white font-body font-semibold rounded-lg hover:bg-red-500/90 transition-colors"
         >
           <RotateCcw size={18} />
           <span>Practice Again</span>

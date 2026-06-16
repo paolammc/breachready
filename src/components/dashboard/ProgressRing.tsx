@@ -22,7 +22,7 @@ export function ProgressRing({
   return (
     <button
       onClick={onClick}
-      className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-pale-gray/5 transition-colors cursor-pointer"
+      className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-surface-muted/50 transition-colors cursor-pointer"
     >
       <div className="relative" style={{ width: size, height: size }}>
         <svg width={size} height={size} className="transform -rotate-90">
@@ -34,7 +34,7 @@ export function ProgressRing({
             fill="none"
             stroke="currentColor"
             strokeWidth={strokeWidth}
-            className="text-slate-gray/20"
+            className="text-foreground-muted/20"
           />
           {/* Progress circle */}
           <motion.circle
@@ -45,7 +45,7 @@ export function ProgressRing({
             stroke="currentColor"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
-            className="text-amber-gold"
+            className="text-brand-warning"
             initial={{ strokeDashoffset: circumference }}
             animate={{ strokeDashoffset }}
             transition={{ duration: 1, ease: 'easeOut' }}
@@ -56,12 +56,12 @@ export function ProgressRing({
         </svg>
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="font-display text-2xl font-bold text-pale-gray">
+          <span className="font-heading text-2xl font-bold text-foreground">
             {Math.round(progress)}%
           </span>
         </div>
       </div>
-      <span className="font-ui text-sm font-medium text-slate-gray">{label}</span>
+      <span className="font-body text-sm font-medium text-foreground-muted">{label}</span>
     </button>
   );
 }

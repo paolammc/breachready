@@ -1,36 +1,73 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=JetBrains+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
-/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base Styles */
 @layer base {
+  :root {
+    --surface: 248 250 252;
+    --surface-elevated: 255 255 255;
+    --surface-muted: 241 245 249;
+    --foreground: 15 23 42;
+    --foreground-muted: 100 116 139;
+    --foreground-subtle: 148 163 184;
+    --border: 226 232 240;
+  }
+
+  .dark {
+    --surface: 15 23 42;
+    --surface-elevated: 30 41 59;
+    --surface-muted: 30 41 59;
+    --foreground: 248 250 252;
+    --foreground-muted: 148 163 184;
+    --foreground-subtle: 100 116 139;
+    --border: 51 65 85;
+  }
+
   html {
-    font-family: 'Lora', serif;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-deep-navy text-slate-gray m-0;
+    @apply bg-surface text-foreground-muted m-0 transition-colors duration-200;
   }
 
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    @apply text-pale-gray;
-  }
-
-  code, pre {
-    font-family: 'JetBrains Mono', monospace;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-foreground font-semibold tracking-tight;
   }
 }
 
-/* Component Styles */
 @layer components {
-  /* Terminal cursor animation */
+  .tech-bg {
+    @apply bg-tech-grid bg-tech-grid bg-surface;
+    background-image: theme('backgroundImage.tech-grid'), theme('backgroundImage.tech-glow');
+  }
+
+  .dark .tech-bg {
+    background-image: theme('backgroundImage.tech-grid'), theme('backgroundImage.tech-glow');
+  }
+
+  .card-tech {
+    @apply bg-surface-elevated rounded-xl border border-border shadow-tech;
+  }
+
+  .overline {
+    @apply font-body text-xs font-medium uppercase tracking-widest text-foreground-subtle;
+  }
+
+  .subtitle {
+    @apply font-body text-sm text-foreground-muted;
+  }
+
+  .caption {
+    @apply font-body text-xs text-foreground-muted;
+  }
+
   .terminal-cursor {
     @apply inline-block w-2 h-5 bg-terminal-green;
     animation: blink 1s step-end infinite;
@@ -41,7 +78,6 @@
     50% { opacity: 0; }
   }
 
-  /* Flashcard flip animation */
   .flashcard {
     perspective: 1000px;
   }
@@ -71,29 +107,9 @@
     transform: rotateY(180deg);
   }
 
-  /* Progress ring */
   .progress-ring-circle {
     transition: stroke-dashoffset 0.35s;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
-  }
-}
-
-/* Utility Classes */
-@layer utilities {
-  .font-display {
-    font-family: 'Playfair Display', serif;
-  }
-
-  .font-body {
-    font-family: 'Lora', serif;
-  }
-
-  .font-mono {
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .font-ui {
-    font-family: 'Inter', sans-serif;
   }
 }

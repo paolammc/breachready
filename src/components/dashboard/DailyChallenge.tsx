@@ -23,17 +23,17 @@ export function DailyChallenge({
       : '/console';
 
   return (
-    <div className="bg-gradient-to-r from-amber-gold/10 to-amber-gold/5 rounded-xl p-6 border border-amber-gold/20">
+    <div className="card-tech p-6 bg-gradient-to-br from-brand-warning/5 to-transparent">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-amber-gold/20 rounded-lg">
-            <Sparkles size={20} className="text-amber-gold" />
+          <div className="p-2 bg-brand-warning/20 rounded-lg">
+            <Sparkles size={20} className="text-brand-warning" />
           </div>
           <div>
-            <h3 className="font-display text-lg font-bold text-pale-gray">
+            <h3 className="font-heading text-lg font-bold text-foreground">
               Daily Challenge
             </h3>
-            <p className="text-sm text-slate-gray font-body">
+            <p className="text-sm text-foreground-muted font-body">
               {isCompleted ? 'Completed!' : 'Complete to maintain your streak'}
             </p>
           </div>
@@ -41,17 +41,17 @@ export function DailyChallenge({
         <StreakCounter streak={streak} />
       </div>
 
-      <div className="bg-deep-navy/50 rounded-lg p-4 mb-4">
-        <p className="text-sm text-slate-gray font-ui uppercase tracking-wide mb-1">
+      <div className="bg-surface-muted rounded-lg p-4 mb-4">
+        <p className="text-sm text-foreground-muted font-body uppercase tracking-wide mb-1">
           Today's {challengeType}
         </p>
-        <p className="text-pale-gray font-body">{challengeTitle}</p>
+        <p className="text-foreground font-body">{challengeTitle}</p>
       </div>
 
       {!isCompleted && (
         <Link
           to={linkTo}
-          className="flex items-center justify-center gap-2 w-full py-3 bg-amber-gold text-deep-navy font-ui font-semibold rounded-lg hover:bg-amber-gold/90 transition-colors"
+          className="flex items-center justify-center gap-2 w-full py-3 bg-brand-warning text-brand-primary font-body font-semibold rounded-lg hover:brightness-110 transition-all"
         >
           <span>Complete Today's Challenge</span>
           <ArrowRight size={18} />
@@ -59,7 +59,7 @@ export function DailyChallenge({
       )}
 
       {isCompleted && (
-        <div className="flex items-center justify-center gap-2 w-full py-3 bg-forest-green/20 text-forest-green font-ui font-semibold rounded-lg">
+        <div className="flex items-center justify-center gap-2 w-full py-3 bg-brand-accent/20 text-brand-accent font-body font-semibold rounded-lg">
           <Sparkles size={18} />
           <span>Challenge Complete!</span>
         </div>

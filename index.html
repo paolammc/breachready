@@ -2,10 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="BreachReady - CompTIA Security+ SY0-701 Interactive Study App. Know It. Type It. Pass It." />
-    <meta name="theme-color" content="#0D1B2A" />
+    <meta name="theme-color" content="#0F172A" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('breachready_theme');
+          if (stored) {
+            var theme = JSON.parse(stored).state?.theme;
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <title>BreachReady | CompTIA Security+ SY0-701</title>
   </head>
   <body>

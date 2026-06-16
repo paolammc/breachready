@@ -9,18 +9,18 @@ export function StreakCounter({ streak }: StreakCounterProps) {
 
   return (
     <div
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${
-        isActive ? 'bg-amber-gold/20' : 'bg-slate-gray/20'
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-full border border-border ${
+        isActive ? 'bg-brand-warning/15' : 'bg-surface-muted'
       }`}
     >
       <Flame
         size={16}
-        className={isActive ? 'text-amber-gold' : 'text-slate-gray'}
+        className={isActive ? 'text-brand-warning' : 'text-foreground-muted'}
         fill={isActive ? 'currentColor' : 'none'}
       />
       <span
-        className={`font-ui font-semibold text-sm ${
-          isActive ? 'text-amber-gold' : 'text-slate-gray'
+        className={`font-body font-semibold text-sm ${
+          isActive ? 'text-brand-warning' : 'text-foreground-muted'
         }`}
       >
         {streak}

@@ -17,17 +17,17 @@ const navItems = [
 
 export function BottomNav() {
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-deep-navy border-t border-slate-gray/20 z-50">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-surface-elevated/90 backdrop-blur-md border-t border-border z-50">
       <ul className="flex justify-around items-center h-16">
         {navItems.map(({ to, icon: Icon, label }) => (
           <li key={to}>
             <NavLink
               to={to}
               className={({ isActive }) =>
-                `flex flex-col items-center gap-1 px-3 py-2 font-ui text-xs transition-colors ${
+                `flex flex-col items-center gap-1 px-3 py-2 font-body text-xs transition-colors ${
                   isActive
-                    ? 'text-amber-gold'
-                    : 'text-slate-gray hover:text-pale-gray'
+                    ? 'text-brand-secondary'
+                    : 'text-foreground-muted hover:text-foreground'
                 }`
               }
             >
