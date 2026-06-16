@@ -31,7 +31,7 @@ export function HeroBanner({ overallProgress }: HeroBannerProps) {
 
   return (
     <div className="relative overflow-hidden rounded-2xl p-6 lg:p-8 border border-brand-secondary/20 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-secondary/40 shadow-tech-lg">
-      <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-tech-grid opacity-20 blur-sm pointer-events-none scale-105" />
       <div className="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <div>
           <p className="overline text-brand-accent mb-2">Security+ SY0-701</p>

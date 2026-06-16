@@ -22,7 +22,7 @@ export function Sidebar() {
   return (
     <aside className="hidden lg:flex flex-col w-60 bg-brand-primary border-r border-border/30 min-h-screen">
       <div className="p-5 border-b border-white/10">
-        <Logo variant="full" className="h-12" />
+        <Logo variant="full" />
         <p className="subtitle mt-2 text-white/50">
           Know It. Type It. Pass It.
         </p>

@@ -44,12 +44,28 @@
 
 @layer components {
   .tech-bg {
-    @apply bg-tech-grid bg-tech-grid bg-surface;
-    background-image: theme('backgroundImage.tech-grid'), theme('backgroundImage.tech-glow');
+    @apply relative isolate bg-surface;
   }
 
-  .dark .tech-bg {
+  .tech-bg::before {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
     background-image: theme('backgroundImage.tech-grid'), theme('backgroundImage.tech-glow');
+    background-size: theme('backgroundSize.tech-grid'), 100% 100%;
+    filter: blur(12px);
+    opacity: 0.55;
+    transform: scale(1.05);
+  }
+
+  .dark .tech-bg::before {
+    opacity: 0.4;
+  }
+
+  .tech-bg > * {
+    @apply relative z-10;
   }
 
   .card-tech {

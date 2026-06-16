@@ -39,12 +39,12 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
-        'tech-grid': `linear-gradient(to right, rgb(37 99 235 / 0.04) 1px, transparent 1px),
-          linear-gradient(to bottom, rgb(37 99 235 / 0.04) 1px, transparent 1px)`,
-        'tech-glow': 'radial-gradient(ellipse at top, rgb(37 99 235 / 0.08), transparent 60%)',
+        'tech-grid': `linear-gradient(to right, rgb(37 99 235 / 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgb(37 99 235 / 0.06) 1px, transparent 1px)`,
+        'tech-glow': 'radial-gradient(ellipse 80% 50% at 50% -10%, rgb(37 99 235 / 0.12), transparent 70%)',
       },
       backgroundSize: {
-        'tech-grid': '32px 32px',
+        'tech-grid': '48px 48px',
       },
       boxShadow: {
         'tech': '0 0 0 1px rgb(var(--border) / 0.5), 0 4px 24px -4px rgb(37 99 235 / 0.08)',

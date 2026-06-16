@@ -4,13 +4,12 @@ interface LogoProps {
 }
 
 export function Logo({ variant = 'full', className = '' }: LogoProps) {
-  const src = variant === 'icon' ? '/logo-icon.png' : '/logo-full.png';
   const alt = 'BreachReady';
 
   if (variant === 'icon') {
     return (
       <img
-        src={src}
+        src="/logo-icon.png"
         alt={alt}
         className={`h-9 w-9 object-contain ${className}`}
       />
@@ -18,10 +17,18 @@ export function Logo({ variant = 'full', className = '' }: LogoProps) {
   }
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={`h-10 w-auto object-contain ${className}`}
-    />
+    <div className={`flex items-center gap-3 ${className}`}>
+      <img
+        src="/logo-icon.png"
+        alt={alt}
+        className="h-10 w-10 object-contain flex-shrink-0"
+      />
+      <div>
+        <p className="font-heading text-lg font-bold leading-tight">
+          <span className="text-white">Breach</span>
+          <span className="text-brand-accent">Ready</span>
+        </p>
+      </div>
+    </div>
   );
 }

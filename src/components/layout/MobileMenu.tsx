@@ -39,7 +39,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           >
             <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div>
-                <Logo variant="full" className="h-10" />
+                <Logo variant="full" />
                 <p className="subtitle mt-2 text-white/50">
                   Know It. Type It. Pass It.
                 </p>
