@@ -17,10 +17,10 @@ export function DailyChallenge({
 }: DailyChallengeProps) {
   const linkTo =
     challengeType === 'flashcard'
-      ? '/flashcards'
+      ? '/app/flashcards'
       : challengeType === 'pbq'
-      ? '/pbq'
-      : '/console';
+      ? '/app/pbq'
+      : '/app/console';
 
   return (
     <div className="card-tech p-6 bg-gradient-to-br from-brand-warning/5 to-transparent">

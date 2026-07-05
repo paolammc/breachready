@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, SkipForward } from 'lucide-react';
 import { useBreachReadyStore } from '../store/useBreachReadyStore';
 import { Terminal, ExercisePrompt, ValidationFeedback, ExerciseComplete } from '../components/console';
@@ -156,13 +157,13 @@ export function Console() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <a
-            href="/"
+          <Link
+            to="/app"
             className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors font-body"
           >
             <ArrowLeft size={20} />
             <span>Back</span>
-          </a>
+          </Link>
           <h1 className="font-heading text-2xl font-bold text-foreground">
             Console Simulator
           </h1>

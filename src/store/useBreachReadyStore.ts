@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
 import type {
   BreachReadyState,
   XPLevel,
@@ -34,6 +33,9 @@ interface BreachReadyActions {
 
   // Exam Date
   setTargetExamDate: (date: string | null) => void;
+
+  // Sync
+  hydrateState: (state: BreachReadyState) => void;
 
   // Reset
   resetProgress: () => void;
@@ -77,12 +79,10 @@ const isYesterday = (dateStr: string): boolean => {
   return date.toISOString().slice(0, 10) === yesterday.toISOString().slice(0, 10);
 };
 
-export const useBreachReadyStore = create<BreachReadyStore>()(
-  persist(
-    (set, get) => ({
-      ...initialState,
+export const useBreachReadyStore = create<BreachReadyStore>()((set, get) => ({
+  ...initialState,
 
-      addXP: (amount: number) => {
+  addXP: (amount: number) => {
         set((state) => ({ xp: Math.max(0, state.xp + amount) }));
       },
 
@@ -267,12 +267,11 @@ export const useBreachReadyStore = create<BreachReadyStore>()(
         set({ targetExamDate: date });
       },
 
-      resetProgress: () => {
-        set(initialState);
+      hydrateState: (state: BreachReadyState) => {
+        set(state);
       },
-    }),
-    {
-      name: 'breachready_state',
-    }
-  )
-);
+
+  resetProgress: () => {
+    set(initialState);
+  },
+}));

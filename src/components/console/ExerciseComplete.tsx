@@ -86,7 +86,7 @@ export function ExerciseComplete({
           <span>Practice Again</span>
         </button>
         <Link
-          to="/"
+          to="/app"
           className="flex-1 flex items-center justify-center gap-2 py-3 bg-foreground-muted/20 text-foreground font-body font-semibold rounded-lg hover:bg-foreground-muted/30 transition-colors"
         >
           <Home size={18} />

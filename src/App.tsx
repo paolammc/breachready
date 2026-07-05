@@ -1,30 +1,31 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Sidebar, BottomNav, TopBar } from './components/layout';
-import { Dashboard, Flashcards, Console, PBQLab, Glossary, Progress } from './pages';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
+import { AppLayout } from './layouts/AppLayout';
+import { Landing, Login, Dashboard, Flashcards, Console, PBQLab, Glossary, Progress } from './pages';
 
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen tech-bg">
-        <Sidebar />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
 
-        <div className="flex-1 flex flex-col min-w-0">
-          <TopBar />
-
-          <main className="flex-1 p-4 lg:p-8 pb-20 lg:pb-8 overflow-y-auto">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/flashcards" element={<Flashcards />} />
-              <Route path="/console" element={<Console />} />
-              <Route path="/pbq" element={<PBQLab />} />
-              <Route path="/glossary" element={<Glossary />} />
-              <Route path="/progress" element={<Progress />} />
-            </Routes>
-          </main>
-        </div>
-
-        <BottomNav />
-      </div>
+        <Route
+          path="/app"
+          element={
+            <ProtectedRoute>
+              <AppLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="flashcards" element={<Flashcards />} />
+          <Route path="console" element={<Console />} />
+          <Route path="pbq" element={<PBQLab />} />
+          <Route path="glossary" element={<Glossary />} />
+          <Route path="progress" element={<Progress />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }

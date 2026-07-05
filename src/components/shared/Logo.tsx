@@ -1,10 +1,12 @@
 interface LogoProps {
   variant?: 'full' | 'icon';
+  theme?: 'light' | 'dark';
   className?: string;
 }
 
-export function Logo({ variant = 'full', className = '' }: LogoProps) {
+export function Logo({ variant = 'full', theme = 'dark', className = '' }: LogoProps) {
   const alt = 'BreachReady';
+  const breachColor = theme === 'dark' ? 'text-white' : 'text-brand-primary';
 
   if (variant === 'icon') {
     return (
@@ -25,7 +27,7 @@ export function Logo({ variant = 'full', className = '' }: LogoProps) {
       />
       <div>
         <p className="font-heading text-lg font-bold leading-tight">
-          <span className="text-white">Breach</span>
+          <span className={breachColor}>Breach</span>
           <span className="text-brand-accent">Ready</span>
         </p>
       </div>

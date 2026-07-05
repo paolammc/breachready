@@ -57,7 +57,7 @@ export function WeakAreas({ areas }: WeakAreasProps) {
       </ul>
 
       <Link
-        to="/flashcards"
+        to="/app/flashcards"
         className="flex items-center justify-center gap-2 w-full py-3 bg-red-500 text-white font-body font-semibold rounded-lg hover:bg-red-500/90 transition-colors"
       >
         <span>Drill These Now</span>

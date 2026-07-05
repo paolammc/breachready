@@ -9,12 +9,12 @@ interface MobileMenuProps {
 }
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/flashcards', icon: Layers, label: 'Flashcards' },
-  { to: '/console', icon: Terminal, label: 'Terminal' },
-  { to: '/pbq', icon: FlaskConical, label: 'PBQ Lab' },
-  { to: '/glossary', icon: BookOpen, label: 'Glossary' },
-  { to: '/progress', icon: BarChart3, label: 'Progress' },
+  { to: '/app', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/app/flashcards', icon: Layers, label: 'Flashcards' },
+  { to: '/app/console', icon: Terminal, label: 'Terminal' },
+  { to: '/app/pbq', icon: FlaskConical, label: 'PBQ Lab' },
+  { to: '/app/glossary', icon: BookOpen, label: 'Glossary' },
+  { to: '/app/progress', icon: BarChart3, label: 'Progress' },
 ];
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
@@ -59,6 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <li key={to}>
                     <NavLink
                       to={to}
+                      end={to === '/app'}
                       onClick={onClose}
                       className={({ isActive }) =>
                         `flex items-center gap-3 px-3 py-2.5 rounded-lg font-body text-sm font-medium transition-colors ${

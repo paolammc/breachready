@@ -8,11 +8,11 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Home' },
-  { to: '/flashcards', icon: Layers, label: 'Cards' },
-  { to: '/console', icon: Terminal, label: 'Console' },
-  { to: '/pbq', icon: FlaskConical, label: 'PBQ' },
-  { to: '/glossary', icon: BookOpen, label: 'Glossary' },
+  { to: '/app', icon: LayoutDashboard, label: 'Home' },
+  { to: '/app/flashcards', icon: Layers, label: 'Cards' },
+  { to: '/app/console', icon: Terminal, label: 'Console' },
+  { to: '/app/pbq', icon: FlaskConical, label: 'PBQ' },
+  { to: '/app/glossary', icon: BookOpen, label: 'Glossary' },
 ];
 
 export function BottomNav() {
@@ -23,6 +23,7 @@ export function BottomNav() {
           <li key={to}>
             <NavLink
               to={to}
+              end={to === '/app'}
               className={({ isActive }) =>
                 `flex flex-col items-center gap-1 px-3 py-2 font-body text-xs transition-colors ${
                   isActive

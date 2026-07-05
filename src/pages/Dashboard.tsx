@@ -52,22 +52,22 @@ export function Dashboard() {
           <ProgressRing
             progress={flashcardsProgress}
             label="Flashcards"
-            onClick={() => navigate('/flashcards')}
+            onClick={() => navigate('/app/flashcards')}
           />
           <ProgressRing
             progress={pbqsProgress}
             label="PBQs"
-            onClick={() => navigate('/pbq')}
+            onClick={() => navigate('/app/pbq')}
           />
           <ProgressRing
             progress={consoleExercisesProgress}
             label="Console"
-            onClick={() => navigate('/console')}
+            onClick={() => navigate('/app/console')}
           />
           <ProgressRing
             progress={glossaryProgress}
             label="Glossary"
-            onClick={() => navigate('/glossary')}
+            onClick={() => navigate('/app/glossary')}
           />
         </div>
       </section>
@@ -79,7 +79,7 @@ export function Dashboard() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <QuickLaunchCard
-            to="/flashcards"
+            to="/app/flashcards"
             icon={Layers}
             title="Flashcards"
             description="Commands & port numbers"
@@ -87,7 +87,7 @@ export function Dashboard() {
             accentColor="amber"
           />
           <QuickLaunchCard
-            to="/console"
+            to="/app/console"
             icon={Terminal}
             title="Console Simulator"
             description="Practice typing commands"
@@ -95,7 +95,7 @@ export function Dashboard() {
             accentColor="blue"
           />
           <QuickLaunchCard
-            to="/pbq"
+            to="/app/pbq"
             icon={FlaskConical}
             title="PBQ Lab"
             description="10 exam scenarios"
@@ -103,7 +103,7 @@ export function Dashboard() {
             accentColor="green"
           />
           <QuickLaunchCard
-            to="/glossary"
+            to="/app/glossary"
             icon={BookOpen}
             title="Glossary"
             description="150+ security terms"
